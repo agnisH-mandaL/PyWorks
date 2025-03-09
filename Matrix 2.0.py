@@ -218,7 +218,6 @@ def plot():
     normal2= np.array(y[3:6])
     normal3= np.array(y[6:9])
 
-    
     d1=float(y[9])
     d2=float(y[10])
     d3=float(y[11])
@@ -232,11 +231,7 @@ def plot():
         ax.plot_surface(X, Y, Z, cmap='gnuplot_r')
     else:
         Z=0
-
-    # Create figure
-  
-
-    
+        
     if float(normal2[2])!=0: 
         Z=(-float(normal2[0] )* X - float(normal2[1]) * Y - d2) * 1. /float(normal2[2])
         ax.plot_surface(X, Y, Z, cmap='cubehelix')
@@ -248,7 +243,7 @@ def plot():
         ax.plot_surface(X, Y, Z, cmap='Purples_r')
     else:
         Z=0
-    # Labels
+        
     ax.set_xlabel("X Axis")
     ax.set_ylabel("Y Axis")
     ax.set_zlabel("Z Axis")
