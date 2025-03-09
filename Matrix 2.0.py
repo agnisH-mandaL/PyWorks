@@ -251,7 +251,7 @@ def plot():
     ax.set_title("System of Equations")
 
     plt.savefig("3dplot.png")
-    img=Image.open("C:/Users/AGNISH MANDAL/Downloads/Pyworks/3dplot.png")
+    img=Image.open("3dplot.png")
     img=img.resize((485,275))
     img=ImageTk.PhotoImage(img)    
     imagefix=Label(frame4,image=img)
