@@ -18,7 +18,7 @@ frame1=Frame(root,relief=RIDGE,bd=5,bg="light cyan")
 frame1.place(height=500,width=495,x=5,y=70)
 frame2=Frame(root,relief=RIDGE,bd=5,bg="light cyan")
 frame2.place(height=500,width=495,x=500,y=70)
-frame3=Frame(root,relief=RIDGE,bd=3,bg="spring green3")
+frame3=Frame(root,relief=RIDGE,bd=3,bg="gray10")
 frame3.place(height=63,width=485,x=505,y=500)
 frame4=Frame(root,relief=RIDGE,bd=3,bg="gray7")
 frame4.place(height=275,width=485,x=10,y=290)
@@ -218,6 +218,7 @@ def plot():
     normal2= np.array(y[3:6])
     normal3= np.array(y[6:9])
 
+    
     d1=float(y[9])
     d2=float(y[10])
     d3=float(y[11])
@@ -231,7 +232,11 @@ def plot():
         ax.plot_surface(X, Y, Z, cmap='gnuplot_r')
     else:
         Z=0
-        
+
+    # Create figure
+  
+
+    
     if float(normal2[2])!=0: 
         Z=(-float(normal2[0] )* X - float(normal2[1]) * Y - d2) * 1. /float(normal2[2])
         ax.plot_surface(X, Y, Z, cmap='cubehelix')
@@ -243,7 +248,7 @@ def plot():
         ax.plot_surface(X, Y, Z, cmap='Purples_r')
     else:
         Z=0
-        
+    # Labels
     ax.set_xlabel("X Axis")
     ax.set_ylabel("Y Axis")
     ax.set_zlabel("Z Axis")
@@ -251,7 +256,7 @@ def plot():
     ax.set_title("System of Equations")
 
     plt.savefig("3dplot.png")
-    img=Image.open("3dplot.png")
+    img=Image.open("C:/Users/AGNISH MANDAL/Downloads/Pyworks/3dplot.png")
     img=img.resize((485,275))
     img=ImageTk.PhotoImage(img)    
     imagefix=Label(frame4,image=img)
@@ -259,11 +264,11 @@ def plot():
     imagefix.pack()
 
 #BUTTONS----
-btn=Button(frame3,width=15,text="Plot",fg="white",activebackground="cadet blue1",bg="cadet blue3",font=("arial",10,"bold"),command=plot).grid(column=0,row=0)
-btn=Button(frame3,width=15,text="Clear",fg="white",activebackground="red",bg="indian red",font=("arial",10,"bold"),command=clear).grid(column=0,row=1)
-btn=Button(frame3,width=15,text="Solve",fg="white",activebackground="cadet blue1",bg="cadet blue3",font=("arial",10,"bold"),command=solve).grid(column=2,row=0)
-btn=Button(frame3,width=15,text="Equation",fg="white",activebackground="cadet blue1",bg="cadet blue3",font=("arial",10,"bold"),command=eqn).grid(column=1,row=1)
-btn=Button(frame3,width=15,text="Enter Matrix",fg="white",activebackground="cadet blue1",bg="cadet blue3",font=("arial",10,"bold"),command=apply).grid(column=1,row=0)
+btn=Button(frame3,width=21,text="Plot",fg="white",activebackground="cadet blue1",bg="cadet blue3",font=("arial",10,"bold"),command=plot).place(x=300,y=0)
+btn=Button(frame3,width=31,text="Clear",fg="white",activebackground="red",bg="indian red",font=("arial",10,"bold"),command=clear).place(x=0,y=28)
+btn=Button(frame3,width=28,text="Solve",fg="white",activebackground="medium spring green",bg="lime green",font=("arial",10,"bold"),command=solve).place(x=245,y=28)
+btn=Button(frame3,width=21,text="Equation",fg="white",activebackground="cadet blue1",bg="cadet blue3",font=("arial",10,"bold"),command=eqn).place(x=150,y=0)
+btn=Button(frame3,width=21,text="Enter Matrix",fg="white",activebackground="cadet blue1",bg="cadet blue3",font=("arial",10,"bold"),command=apply).place(x=0,y=0)
 
 
 root.mainloop()
