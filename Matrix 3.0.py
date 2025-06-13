@@ -64,11 +64,15 @@ def clear():
     lbl3.config(text="")
     lbl4.config(text="")
     lbl5.config(text="")
+    lbl6.config(text="")
+    lbl7.config(text="")
+    lbl8.config(text="")
+    lbl9.config(text="")
     
-
 def eqn():
-    global lbl1,lbl2,lbl3,lbl4,lbl5,lbl6
+    global lbl1,lbl2,lbl3,lbl4,lbl5,lbl6,lbl7,lbl8,lbl9
     lines=[]
+    rows=[]
     j=int(col.get())
     k=int(row.get())
     for i in range(1,k+1):
@@ -90,14 +94,14 @@ def eqn():
     lbl4.place(x=0,y=220)
     lbl5=Label(frame2,text=lines[3],font=("arial",10),fg="white",bg="gray12")
     lbl5.place(x=0,y=240)
-    lbl5=Label(frame2,text=lines[4],font=("arial",10),fg="white",bg="gray12")
-    lbl5.place(x=0,y=260)
-    lbl5=Label(frame2,text=lines[5],font=("arial",10),fg="white",bg="gray12")
-    lbl5.place(x=0,y=280)
-    lbl5=Label(frame2,text=lines[6],font=("arial",10),fg="white",bg="gray12")
-    lbl5.place(x=0,y=300)
-    lbl5=Label(frame2,text=line_4,font=("arial",10),fg="white",bg="gray12")
-    lbl5.place(x=0,y=440)
+    lbl6=Label(frame2,text=lines[4],font=("arial",10),fg="white",bg="gray12")
+    lbl6.place(x=0,y=260)
+    lbl7=Label(frame2,text=lines[5],font=("arial",10),fg="white",bg="gray12")
+    lbl7.place(x=0,y=280)
+    lbl8=Label(frame2,text=lines[6],font=("arial",10),fg="white",bg="gray12")
+    lbl8.place(x=0,y=300)
+    lbl9=Label(frame2,text=line_4,font=("arial",10),fg="white",bg="gray12")
+    lbl9.place(x=0,y=440)
 def solveb():
     z=[]
     d=[]
