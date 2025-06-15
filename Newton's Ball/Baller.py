@@ -6,7 +6,7 @@ import numpy as np
 root=Tk()
 root.title("Baller")
 root.geometry("960x480+250+200")
-ico=Image.open("C:/Users/AGNISH MANDAL/Downloads/Pyworks/pixil-frame-0.png")
+ico=Image.open("Newton's Ball/pixil-frame-0.png")
 icon=ImageTk.PhotoImage(ico)
 root.wm_iconphoto(False,icon)
 
@@ -27,8 +27,8 @@ labt=Label(frame2,text="Time of Flight(s)",bg="gray12",fg="white",font=("arial",
 labh=Label(frame2,text="Max Height(m)",bg="gray12",fg="white",font=("arial",10)).place(x=0,y=230)
 labr=Label(frame2,text="Range(m)",bg="gray12",fg="white",font=("arial",10)).place(x=0,y=290)
 
-loc="C:/Users/AGNISH MANDAL/Downloads/Pyworks/pix-bag.png"
-ball=Image.open("C:/Users/AGNISH MANDAL/Downloads/Pyworks/pixil-frame-0.png")
+loc="Newton's Ball/pix-bag.png"
+ball=Image.open("Newton's Ball/pixil-frame-0.png")
 bac=Image.open(loc)
 bac=bac.resize((720,480))
 bac=ImageTk.PhotoImage(bac)   
