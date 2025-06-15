@@ -1,2 +1,2 @@
-## Demo
-![Demo](https://raw.githubusercontent.com/agnisH-mandaL/PyWorks/refs/heads/main/Newton's Ball/Baller.gif)
+### This is how it looks like
+![Demo](https://raw.githubusercontent.com/agnisH-mandaL/PyWorks/main/Newton's%20Ball/Baller.gif)
