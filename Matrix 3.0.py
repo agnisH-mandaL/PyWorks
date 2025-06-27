@@ -70,7 +70,7 @@ def clear():
     lbl9.config(text="")
     
 def eqn():
-    global lbl1,lbl2,lbl3,lbl4,lbl5,lbl6,lbl7,lbl8,lbl9
+    global lbl1,lbl2,lbl3,lbl4,lbl5,lbl6,lbl7,lbl8,lbl9,rows
     lines=[]
     rows=[]
     j=int(col.get())
