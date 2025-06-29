@@ -6,7 +6,7 @@ import numpy as np
 root=Tk()
 root.title("Baller")
 root.geometry("960x480+250+200")
-ico=Image.open("Newton's Ball/pixil-frame-0.png")
+ico=Image.open("Newton's Ball/pixil-frame-0 (2).ico")
 icon=ImageTk.PhotoImage(ico)
 root.wm_iconphoto(False,icon)
 
@@ -38,7 +38,10 @@ ballfix=frame.create_image(250,325,image=ball,anchor=NW)
 width=ball.width()
 height=ball.height()
 def run():
-    vel=int(v.get())
+    try:
+        vel=int(v.get())
+    except ValueError:
+        vel=0
     ang=int(theta.get())
     velx=vel*np.cos(np.radians(ang))
     vely=-(vel*np.sin(np.radians(ang)))
@@ -69,16 +72,16 @@ def run():
         r+=x
         lbl=Label(frame2,text=tim,bg="gray12",fg="white",font=("arial",10)).place(x=0,y=190)
         lbl=Label(frame2,text=x_dist,bg="gray12",fg="white",font=("arial",10)).place(x=0,y=310)
-            
-
         root.update()
         time.sleep(0.01)
-    tof="~"+str(tof)
+    tof="~"+str(tof)+" (True Value)"
     mh=str(mh)
-    ran="~"+str(ran)
+    ran="~"+str(ran)+" (True Value)"
     lbl=Label(frame2,text=tof,bg="gray12",fg="white",font=("arial",10)).place(x=0,y=210)
     lbl=Label(frame2,text=mh,bg="gray12",fg="white",font=("arial",10)).place(x=0,y=250)
     lbl=Label(frame2,text=ran,bg="gray12",fg="white",font=("arial",10)).place(x=0,y=330)
-    
+def Center():
+    frame.moveto(ballfix,250,325)   
 btn=Button(frame2,text="Launch!",bg="lawngreen",command=run).place(x=0,y=140)
+btn=Button(frame2,width=7,text="Center",bg="lawngreen",command=Center).place(x=53,y=140)
 root.mainloop()
