@@ -6,11 +6,13 @@ import numpy as np
 root=Tk()
 root.title("Baller")
 root.geometry("960x480+250+200")
-ico=Image.open("Newton's Ball/pixil-frame-0 (2).ico")
+ico=Image.open("C:/Users/AGNISH MANDAL/Downloads/Pyworks/pixil-frame-0 (2).ico")
 icon=ImageTk.PhotoImage(ico)
 root.wm_iconphoto(False,icon)
 
 theta=DoubleVar()
+global g
+g=9.8
 
 frame=Canvas(root,bg="black")
 frame.place(height=480,width=720,x=0,y=0)
@@ -27,8 +29,15 @@ labt=Label(frame2,text="Time of Flight(s)",bg="gray12",fg="white",font=("arial",
 labh=Label(frame2,text="Max Height(m)",bg="gray12",fg="white",font=("arial",10)).place(x=0,y=230)
 labr=Label(frame2,text="Range(m)",bg="gray12",fg="white",font=("arial",10)).place(x=0,y=290)
 
-loc="Newton's Ball/pix-bag.png"
-ball=Image.open("Newton's Ball/pixil-frame-0.png")
+lbl_t=Label(frame2,text="",bg="gray12",fg="white",font=("arial",10))
+lbl_t.place(x=0,y=210)
+lbl_h=Label(frame2,text="",bg="gray12",fg="white",font=("arial",10))
+lbl_h.place(x=0,y=250)
+lbl_r=Label(frame2,text="",bg="gray12",fg="white",font=("arial",10))
+lbl_r.place(x=0,y=330)
+
+loc="C:/Users/AGNISH MANDAL/Downloads/Pyworks/pix-bag.png"
+ball=Image.open("C:/Users/AGNISH MANDAL/Downloads/Pyworks/pixil-frame-0.png")
 bac=Image.open(loc)
 bac=bac.resize((720,480))
 bac=ImageTk.PhotoImage(bac)   
@@ -38,6 +47,9 @@ ballfix=frame.create_image(250,325,image=ball,anchor=NW)
 width=ball.width()
 height=ball.height()
 def run():
+    lbl_t.config(text="")
+    lbl_h.config(text="")
+    lbl_r.config(text="")
     try:
         vel=int(v.get())
     except ValueError:
@@ -48,8 +60,8 @@ def run():
     y=0
     x=0
     dt=0.1
-    tof=abs(2*vely/9.8)
-    mh=vely**2/19.6
+    tof=abs(2*vely/g)
+    mh=vely**2/(2*g)
     ran=abs(velx*tof)
     t=0
     r=0
@@ -63,9 +75,9 @@ def run():
             frame.moveto(ballfix,250,cord[1])
             
         frame.move(ballfix,x,y)
-        vely=vely+9.8*dt
+        vely=vely+g*dt
         x=velx*dt
-        y=vely*dt+4.9*dt**2
+        y=vely*dt+(g/2)*dt**2
         tim=str(t)  
         x_dist=str(r)
         t+=dt
@@ -74,14 +86,33 @@ def run():
         lbl=Label(frame2,text=x_dist,bg="gray12",fg="white",font=("arial",10)).place(x=0,y=310)
         root.update()
         time.sleep(0.01)
+
     tof="~"+str(tof)+" (True Value)"
     mh=str(mh)
     ran="~"+str(ran)+" (True Value)"
-    lbl=Label(frame2,text=tof,bg="gray12",fg="white",font=("arial",10)).place(x=0,y=210)
-    lbl=Label(frame2,text=mh,bg="gray12",fg="white",font=("arial",10)).place(x=0,y=250)
-    lbl=Label(frame2,text=ran,bg="gray12",fg="white",font=("arial",10)).place(x=0,y=330)
+    lbl_t.config(text=tof)
+    lbl_h.config(text=mh)
+    lbl_r.config(text=ran)
 def Center():
-    frame.moveto(ballfix,250,325)   
+    frame.moveto(ballfix,250,325)
+def g10():
+    global g
+    Center()
+    g=10
+    btng1.config(bg="white")
+    btng2.config(bg="lawngreen") 
+def g98():
+    global g
+    Center()
+    g=9.8
+    btng1.config(bg="lawngreen")
+    btng2.config(bg="white")     
+    
 btn=Button(frame2,text="Launch!",bg="lawngreen",command=run).place(x=0,y=140)
-btn=Button(frame2,width=7,text="Center",bg="lawngreen",command=Center).place(x=53,y=140)
+btn=Button(frame2,width=7,text="Center",bg="lawngreen",command=Center).place(x=52,y=140)
+btng1=Button(frame2,width=7,text="g=10",bg="lawngreen",command=g10)
+btng1.place(x=110,y=140)
+btng2=Button(frame2,width=7,text="g=9.8",bg="white",command=g98)
+btng2.place(x=168,y=140)
+
 root.mainloop()
