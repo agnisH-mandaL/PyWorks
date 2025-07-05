@@ -49,7 +49,6 @@ def enter():
     data_set.append(e)
     x_="Data set: "+str(data_set)
     lbl_ds.config(text=x_)
-
 def enterb():
     e=entry_b.get()
     rb.append(e)
@@ -69,6 +68,7 @@ def clear():
     lbl8.config(text="")
     lbl9.config(text="")
     
+
 def eqn():
     global lbl1,lbl2,lbl3,lbl4,lbl5,lbl6,lbl7,lbl8,lbl9,rows
     lines=[]
@@ -106,6 +106,7 @@ def solveb():
     z=[]
     d=[]
     j=0
+
     while True:
         rowx=[float(i) for i in rows[j]]
         d.append(rowx)
@@ -170,7 +171,8 @@ def solveb():
         y=[str(x[k])+str(z[k]) for k in range(len(x)) if x[k]!=0]
         r_1.append(y)
         r_2.append(x)
-    #print(r_2)
+    print(r_2)
+    print(r_1)
     sol=[]
     p=0
     q=0
@@ -213,11 +215,19 @@ def solveb():
             d+=1             
  
     lines=[]
-    for i in range(7):
-        try:
-            lines.append(basis[i])
-        except:
-            lines.append("")        
+    sol_=""
+    for i in range(7): 
+        lines.append("")    
+            
+    for i in range(len(basis)):
+        counter=0
+        for k in range(len(basis[i])):
+            if basis[i][k]!=0:
+                counter+=1
+        if counter==0:
+            continue
+        lines[i]=chr(97+i)+str(basis[i])+"+"
+
     lbl=Label(frame1,text="Solution:",fg="white",bg="gray12",font=("arial",10)).place(x=0, y=240)
     lbl=Label(frame1,text=str(lines[0]),fg="lawngreen",bg="gray12",font=("arial",10)).place(x=0, y=260)
     lbl=Label(frame1,text=str(lines[1]),fg="lawngreen",bg="gray12",font=("arial",10)).place(x=0, y=280)
@@ -227,6 +237,7 @@ def solveb():
     lbl=Label(frame1,text=str(lines[5]),fg="lawngreen",bg="gray12",font=("arial",10)).place(x=0, y=360)
     lbl=Label(frame1,text=str(lines[6]),fg="lawngreen",bg="gray12",font=("arial",10)).place(x=0, y=380)
     lbl=Label(frame1,text=str(sol),fg="lawngreen",bg="gray12",font=("arial",10)).place(x=0, y=400)
+    
     
 def solve():
     z=[]
@@ -253,6 +264,7 @@ def solve():
                 for m in range(l):
                     d[k][m]=d[k][m]/gama
                 break
+
     
     r=d
     u=[l for i in range(len(r))]
@@ -260,8 +272,9 @@ def solve():
         for j in range(0,l):
             if r[i][j]!=0:
                 u[i]=j
-                break       
-                
+                break
+            
+            
     for i in range(0, len(u)-1):
         swapped=False
         for j in range(len(u)-1,i,-1):
@@ -271,6 +284,8 @@ def solve():
                 swapped=True
         if not swapped:
             break
+
+    print(r[0],"\n",r[1],"\n",r[2])    
 
     fv=[i for i in range(l) if i not in u]
     pv=[i for i in u if i!=l]        
