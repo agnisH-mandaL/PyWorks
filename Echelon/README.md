@@ -2,7 +2,9 @@
 
 ### A simple interface which computes the solution to a given mxn matrix.
 
-![Demo](https://raw.githubusercontent.com/agnisH-mandaL/PyWorks/main/Echelon/Matrixer.png)
+<img src="https://raw.githubusercontent.com/agnisH-mandaL/PyWorks/main/Echelon/Matrixer.png" alt="Demo" width="600" height="450">
+
+
 
 ### *Instructions for use:* ###
 - Enter the entry value of the matrix row-wise (elements along a row) in the first entry box. Hit ***enter*** button to add an element and ***delete*** to remove the latest element from the entries.
