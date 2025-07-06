@@ -1,8 +1,13 @@
-### Velocity:
-Type in the initial velocity (+ve) in the gray box on the top right.
-### Angle of projection:
-Angle of projection can be chosen between 0 to 180 degrees using the slider.
-#### The center button brings the ball to it's initial location *(not shown in gif)*.
-The **default value** for acceleration due to gravity is **9.8m/s^2,** which can be changed to **10m/s^2**. *(not shown in gif)* 
+## Echelon 
 
-A small demo is shown below
+A simple interface which computes the solution to a given mxn matrix.
+
+Instructions for use:
+- Enter the entry value of the matrix row-wise (elements along a row) in the first entry box. Hit enter button to add an element and delete to remove the latest element from the entries.
+- Enter the number of rows and columns of the matrix (rows only up to 7 is compatible).
+- In the second entry box enter the elements for b (RHS element).
+- Hit equation button to pass the values for calculation.
+- Solve button will pass the Null space for the matrix i.e. the linearly independant vectors.
+- General solution will pass the general solution for the matrix.
+
+Note: Do not press any button more than once unnecessarily, it would lead to undesirable results on the interface.
