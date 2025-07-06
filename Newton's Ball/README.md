@@ -7,4 +7,5 @@ The **default value** for acceleration due to gravity is **9.8m/s^2,** which can
 
 A small demo is shown below
 
-![Demo](https://raw.githubusercontent.com/agnisH-mandaL/PyWorks/main/Newton's%20Ball/Baller.gif)
+
+<img src="https://raw.githubusercontent.com/agnisH-mandaL/PyWorks/main/Newton's%20Ball/Baller.gif" alt="Alt Text" width="600" height="400">
