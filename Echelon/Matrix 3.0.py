@@ -21,9 +21,7 @@ rows=[]
 
 lbl=Label(frame2,text="Enter elements of Matrix (row-wise) :",bg="gray12",font=("arial",10),fg="white").place(x=0,y=0)
 lbl=Label(frame2,text="No. of columns:",bg="gray12",font=("arial",10),fg="white").place(x=0,y=110)
-
 lbl=Label(frame2,text="Enter elements of b(Ax=b):",bg="gray12",font=("arial",10),fg="white").place(x=0,y=320)
-
 lbl=Label(frame2,text="No. of rows:",bg="gray12",font=("arial",10),fg="white").place(x=130,y=110)
 
 entry=Entry(frame2,bg="slategrey",fg="white",font=("arial",10),width=53)
@@ -171,8 +169,7 @@ def solveb():
         y=[str(x[k])+str(z[k]) for k in range(len(x)) if x[k]!=0]
         r_1.append(y)
         r_2.append(x)
-    print(r_2)
-    print(r_1)
+
     sol=[]
     p=0
     q=0
@@ -286,7 +283,7 @@ def solve():
         if not swapped:
             break
 
-    print(r[0],"\n",r[1],"\n",r[2])    
+    #print(r[0],"\n",r[1],"\n",r[2])    
 
     fv=[i for i in range(l) if i not in u]
     pv=[i for i in u if i!=l]        
@@ -313,7 +310,7 @@ def solve():
             x=s1[q]
             q+=1
         sol.append(x)
-    print(sol)
+    #print(sol)
 
     d=0
     e=0
@@ -369,12 +366,12 @@ def deleteb():
 
 #BUTTONS----
 btn=Button(frame3,width=22,text="Clear",fg="white",activebackground="red",bg="indian red",font=("arial",10,"bold"),command=clear).place(x=395,y=28)
-btn=Button(frame3,width=24,text="Solve(Ax=0)",fg="white",activebackground="medium spring green",bg="lime green",font=("arial",10,"bold"),command=solve).place(x=580,y=28)
-btn=Button(frame3,width=22,text="Equation",fg="white",activebackground="cadet blue1",bg="cadet blue3",font=("arial",10,"bold"),command=eqn).place(x=395,y=0)
+btn=Button(frame3,width=24,text="Solve(Ax=0)",fg="white",activebackground="slate blue4",bg="slate blue3",font=("arial",10,"bold"),command=solve).place(x=580,y=28)
+btn=Button(frame3,width=22,text="Equation",fg="white",activebackground="slate blue4",bg="slate blue3",font=("arial",10,"bold"),command=eqn).place(x=395,y=0)
 btn=Button(frame2,width=10,text="Enter",fg="white",activeforeground="lawngreen",activebackground="gray15",bg="gray20",font=("arial",10,"bold"),command=enter).place(x=0,y=70)
 btn=Button(frame2,width=10,text="Enter",fg="white",activeforeground="lawngreen",activebackground="gray15",bg="gray20",font=("arial",10,"bold"),command=enterb).place(x=0,y=405)
 btn=Button(frame2,width=10,text="Delete",fg="white",activeforeground="red",activebackground="gray15",bg="gray20",font=("arial",10,"bold"),command=delete).place(x=90,y=70)
 btn=Button(frame2,width=10,text="Delete",fg="white",activeforeground="red",activebackground="gray15",bg="gray20",font=("arial",10,"bold"),command=deleteb).place(x=90,y=405)
-btn=Button(frame3,width=24,text="General solution(Ax=b)",fg="white",bg="limegreen",activebackground="medium spring green",font=("arial",10,"bold"),command=solveb).place(x=580,y=0)
+btn=Button(frame3,width=24,text="General solution(Ax=b)",fg="white",bg="slate blue3",activebackground="slate blue4",font=("arial",10,"bold"),command=solveb).place(x=580,y=0)
 
 root.mainloop()
