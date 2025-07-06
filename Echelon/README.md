@@ -13,5 +13,6 @@
 - Hit ***equation*** button to pass the values for calculation.
 - ***Solve*** button will pass the Null space for the matrix i.e. the linearly independant vectors.
 - ***General solution*** will pass the general solution for the matrix.
+- ***Clear*** button will clear the results and data inputs. 
 
 ### *Note: Do not press any button more than once unnecessarily, it would lead to undesirable results on the interface.*
