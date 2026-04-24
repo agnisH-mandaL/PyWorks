@@ -2,7 +2,7 @@
 
 #### A graphical simulation of a "robot" traversing to reach the exit point of the obstacle layout.
 
-<img src="https://raw.githubusercontent.com/agnisH-mandaL/PyWorks/main/EscapeSim/EscSim.png" alt="Demo" width="600" height="450">
+<img src="https://raw.githubusercontent.com/agnisH-mandaL/PyWorks/main/EscapeSim/EscSim1.png" alt="Demo" width="600" height="450">
 
 
 ### *Description:* ###
